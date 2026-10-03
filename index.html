@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laxminarayan Alkatwar | Software Engineer (Angular)</title>
+<meta name="description" content="Software Engineer with 4+ years building Angular applications. Currently on a fintech payments platform at ACI Worldwide. Angular, TypeScript, NgRx, accessibility and testing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10233D; --text:#33414E; --muted:#55616C; --line:#D3DAE1;
+  --bg:#F6F7F9; --card:#FFFFFF; --accent:#8A5A00; --amber:#E2A73E; --sel:#EAF0F7;
+  --serif:'IBM Plex Serif',Georgia,serif; --sans:'IBM Plex Sans',-apple-system,'Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);margin:0;font-weight:600}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:2px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:10px 14px;z-index:300;border-radius:4px}
+.skip:focus{top:12px}
+.wrap{max-width:960px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:100;background:rgba(246,247,249,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;flex-wrap:wrap}
+.nav__name{font-family:var(--serif);font-weight:600;text-decoration:none}
+.nav ul{display:flex;gap:22px;flex-wrap:wrap}
+.nav ul a{text-decoration:none;color:var(--muted);font-size:.94rem}
+.nav ul a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+
+/* hero */
+.hero{padding:clamp(48px,8vw,88px) 0 56px}
+.hero .wrap{display:block}
+.hero h1{font-size:clamp(2.3rem,5.4vw,3.6rem);line-height:1.08;letter-spacing:-.01em}
+.role{margin-top:10px;font-size:1.15rem;color:var(--ink);font-weight:500}
+.lede{margin-top:18px;max-width:52ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:11px 20px;border:1.5px solid var(--ink);border-radius:4px;text-decoration:none;font-weight:500;font-size:.95rem}
+.btn--solid{background:var(--ink);color:#fff}
+.btn--solid:hover{background:#1B3A5C}
+.btn--line:hover{background:#fff}
+.meta{margin-top:18px;color:var(--muted);font-size:.92rem}
+
+/* sections */
+.section{padding:64px 0;border-top:1px solid var(--line)}
+.section>.wrap>h2{font-size:1.6rem;margin-bottom:32px}
+.job{display:grid;grid-template-columns:190px 1fr;gap:12px 36px;padding-bottom:40px}
+.job:last-child{padding-bottom:0}
+.job__when{color:var(--muted);font-size:.92rem}
+.job h3{font-size:1.15rem}
+.job__org{color:var(--accent);font-weight:500;margin:2px 0 14px}
+.job li{position:relative;padding-left:18px;margin-bottom:9px;max-width:68ch}
+.job li::before{content:"";position:absolute;left:2px;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.job strong{color:var(--ink);font-weight:600}
+.skills{display:grid;grid-template-columns:190px 1fr;gap:0 36px}
+.skills dt{padding:14px 0;border-top:1px solid var(--line);font-weight:600;color:var(--ink)}
+.skills dd{margin:0;padding:14px 0;border-top:1px solid var(--line)}
+.skills dt:first-of-type,.skills dd:first-of-type{border-top:0;padding-top:0}
+.edu{margin-top:36px;display:grid;grid-template-columns:190px 1fr;gap:0 36px}
+#education .edu{margin-top:0}
+#education{padding:40px 0}
+#education>.wrap>h2{margin-bottom:20px}
+.edu h3{font-size:1rem;font-family:var(--sans);font-weight:600}
+.proj{padding:26px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:190px 1fr;gap:8px 36px}
+.proj:first-of-type{border-top:0;padding-top:0}
+.proj h3{font-size:1.15rem}
+.proj__stack{color:var(--muted);font-size:.9rem;margin-top:4px}
+.status{display:inline-block;font-size:.8rem;font-weight:600;color:var(--accent);margin-top:6px}
+.proj p{max-width:66ch}
+.proj a{display:inline-block;margin-top:10px;font-weight:500}
+.contact__mail{font-family:var(--serif);font-size:clamp(1.2rem,3.6vw,1.9rem);font-weight:600;border-bottom:2px solid var(--amber);text-decoration:none;word-break:break-all}
+.contact p{max-width:52ch;margin-bottom:16px}
+.links{display:flex;flex-wrap:wrap;gap:22px;margin-top:22px}
+.links a{font-weight:500}
+.proj__links{display:flex;flex-wrap:wrap;gap:6px 22px}
+.demo-btn{margin-top:10px;font:inherit;font-weight:500;color:var(--ink);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+dialog.video{width:min(860px,92vw);padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+dialog.video::backdrop{background:rgba(16,35,61,.6)}
+dialog.video video{display:block;width:100%;border-radius:4px;background:#000}
+.video__bar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:10px}
+.video__bar h3{font-size:1.05rem}
+.footer{padding:28px 0 44px;color:var(--muted);font-size:.86rem;border-top:1px solid var(--line)}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .job,.skills,.edu,.proj{grid-template-columns:1fr}
+  .skills dt{border-bottom:0;padding-bottom:0}
+  .skills dd{border-top:0;padding-top:4px}
+  .skills dt:first-of-type{padding-top:0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__name" href="#top">Laxminarayan Alkatwar</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <h1>Laxminarayan Alkatwar</h1>
+        <p class="role">Software Engineer, Angular and TypeScript</p>
+        <p class="lede">I have 4+ years of experience building production web apps. At ACI Worldwide I work on a fintech payments platform: leading Angular upgrades up to v21, building reusable components, and taking the app to zero automated accessibility violations.</p>
+        <div class="actions">
+          <a class="btn btn--solid" href="#experience">See my work</a>
+        </div>
+        <p class="meta">Pune, India</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <article class="job">
+        <p class="job__when">Oct 2024 to present<br>Pune, India (Hybrid)</p>
+        <div>
+          <h3>Software Engineer</h3>
+          <p class="job__org">ACI Worldwide (fintech / payments platform)</p>
+          <ul>
+            <li><strong>Angular v18 to v21.</strong> Led the upgrade, migrated about 666 legacy <code>*ngIf</code>/<code>*ngFor</code> blocks to built-in control flow and fixed 52 broken test suites with no functional regressions.</li>
+            <li><strong>Bootstrap 3.4.3 to 5.3.7.</strong> Reworked 148 templates and stylesheets and removed an unsupported, vulnerable dependency (bootstrap-sass).</li>
+            <li><strong>Reusable PaymentMethodDropdown.</strong> Replaced the old payment-method selector in the Wallet module. Shipped it through 12 production pull requests, including an iOS iframe fix, with 1,000+ lines of unit tests.</li>
+            <li><strong>Accessibility (WCAG 2.1 AA).</strong> Fixed issues across about 160 files: screen-reader errors, translated aria-labels (English/Spanish), keyboard focus and color contrast. Reached 0 axe violations across 230 audited components.</li>
+            <li><strong>Testing and security.</strong> Wrote 117 new Jest spec files (about 26% of the suite) and fixed 7 security vulnerabilities and outdated dependencies.</li>
+            <li><strong>Production fixes.</strong> Resolved 10+ defects, including receipt printing on 80mm thermal printers, and built NgRx store logic across 20 store files.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="job__when">Dec 2022 to Sep 2024<br>Pune, India</p>
+        <div>
+          <h3>Front-End Developer</h3>
+          <p class="job__org">Zvolv</p>
+          <ul>
+            <li>Built and maintained <strong>20+ features</strong> across several Angular applications, working directly with product and design.</li>
+            <li>Integrated RESTful APIs and reworked data fetching, cutting retrieval time by roughly 20%.</li>
+            <li>Migrated about 60% of a legacy codebase to <strong>Angular 16</strong> and rebuilt key layouts as responsive (CSS Grid/Flexbox).</li>
+            <li>Fixed 50+ bugs reported by QA and users.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="job__when">Jul 2022 to Nov 2022<br>Pune, India</p>
+        <div>
+          <h3>Full Stack Web Developer (Apprenticeship)</h3>
+          <p class="job__org">CodeKul</p>
+          <ul><li>Trained in React and API development; scored 90% on assessments and worked in a team of 5 on 10 small web projects.</li></ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt><dd>JavaScript, TypeScript, Python, HTML5, CSS3, SCSS</dd>
+        <dt>Frameworks and libraries</dt><dd>Angular (18-21), React, FastAPI, SQLAlchemy, .NET</dd>
+        <dt>State and data</dt><dd>RxJS, NgRx, PostgreSQL, Docker</dd>
+        <dt>Testing and accessibility</dt><dd>Jest, jest-axe, WCAG 2.1 AA, ADA</dd>
+        <dt>Architecture</dt><dd>Frontend System Design, Micro-Frontend Architecture</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="edu">
+        <p class="job__when">2018 to 2022</p>
+        <div>
+          <h3>B.E. Mechanical Engineering</h3>
+          <p>Smt. Kashibai Navale College of Engineering. CGPA 8.33 / 10</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <article class="proj">
+        <div>
+          <h3>AI Angular Component Generator</h3>
+          <p class="status">2026</p>
+        </div>
+        <div>
+          <p>Describe a UI component in plain English and get a standalone Angular and Tailwind component back. It has a sandboxed live preview with loading and error states, an editable code pane, copy and export, style and color options, and a saved history. A small Node API calls an LLM (Gemini or Claude), validates the JSON it returns, and keeps the API key off the browser.</p>
+          <p class="proj__stack">Angular 22, TypeScript, Tailwind CSS, RxJS, Node.js, Gemini API, Claude API</p>
+          <div class="proj__links">
+            <button type="button" class="demo-btn" id="demo-open">Watch demo video</button>
+            <a href="https://github.com/laxminarayanalkatwar">View on GitHub</a>
+          </div>
+        </div>
+      </article>
+      <article class="proj">
+        <div>
+          <h3>Task Management API</h3>
+          <p class="status">2026</p>
+        </div>
+        <div>
+          <p>A REST API with user registration, login, JWT authentication and protected CRUD endpoints for tasks. It uses SQLAlchemy with PostgreSQL, Alembic migrations, Pydantic validation and Pytest tests, and runs in Docker.</p>
+          <p class="proj__stack">Python, FastAPI, SQLAlchemy, PostgreSQL, Alembic, Pytest, Docker</p>
+          <a href="https://github.com/laxminarayanalkatwar/task-management-api">View on GitHub</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <a class="contact__mail" href="mailto:laxminarayanalkatwar17@gmail.com">laxminarayanalkatwar17@gmail.com</a>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/laxminarayan-alkatwar-26a1b01b3/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/laxminarayanalkatwar" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="wrap">&copy; <span id="year"></span> Laxminarayan Alkatwar</div></footer>
+
+<dialog class="video" id="demo-dialog" aria-labelledby="demo-title">
+  <div class="video__bar">
+    <h3 id="demo-title">AI Angular Component Generator: demo</h3>
+    <button type="button" class="demo-btn" id="demo-close">Close</button>
+  </div>
+  <video controls preload="none" playsinline poster="demo-poster.jpg" src="demo.mp4">Your browser cannot play this video.</video>
+</dialog>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Demo video dialog
+(function(){
+  const dlg = document.getElementById('demo-dialog'), vid = dlg.querySelector('video');
+  document.getElementById('demo-open').addEventListener('click', ()=> dlg.showModal());
+  document.getElementById('demo-close').addEventListener('click', ()=> dlg.close());
+  dlg.addEventListener('close', ()=> vid.pause());
+})();
+</script>
+</body>
+</html>
